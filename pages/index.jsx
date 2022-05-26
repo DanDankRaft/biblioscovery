@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
-// import useSWR from 'swr';
+import useSWR from 'swr';
 
 
 class Home extends React.Component {
@@ -75,17 +75,16 @@ class SearchBox extends React.Component {
 }
 
 function Item(props) {
-  // const jsonGetFetcher = (url) => fetch(url).then((res) => res.json());
-  // let {data, error} = useSWR(`/api/search/${props.content}`, jsonGetFetcher);
-  // if(!data)
-    // return (<div>...</div>);
-  // else
-    // return (
-      // data.map((val, i) =>{
-        // return (<div>{val["title"]}</div>);
-      // })
-    // );
-    return (<div>migrating for now sowwy</div>);
+  const jsonGetFetcher = (url) => fetch(url).then(res => res.json());
+  let {data, error} = useSWR(`${process.env.NEXT_PUBLIC_API_ADDRESS}:${process.env.NEXT_PUBLIC_API_PORT}/search?q=${props.content}`, jsonGetFetcher);
+  if(!data)
+    return (<div>...</div>);
+  else
+    return (
+      data.map((val, i) =>{
+        return (<div key={val["title"]}>{val["title"]}</div>);
+      })
+    );
 }
 
 export default Home;
