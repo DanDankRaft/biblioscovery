@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.document-card {
+    @apply mt-1 md:mt-2;
+    @apply w-[95vw] max-w-[1000px] h-fit;
+    @apply border-4 rounded-lg p-1;
+    @apply mx-auto;
+}
+
+.url-bar {
+    @apply text-[0.5rem] leading-3;
+    @apply truncate;
+    @apply underline cursor-pointer;
+    @apply text-inherit hover:text-neutral-400;
+}
+
+.doc-inner-content {
+    @apply h-fit;
+    @apply flex flex-row gap-x-1;
+}
+
+.doc-image-container {
+    @apply h-20 w-20 shrink-0;
+}
+
+.doc-image {
+    @apply max-h-full max-w-full mx-auto;
+}
+
+.doc-summary {
+    @apply text-[0.5rem] max-w-[inherit] leading-tight;
+    @apply hidden sm:block;
+}
+
+.doc-title {
+    @apply text-[0.7rem] md:text-[0.9rem] lg:text-[1.125rem] leading-none;
+}
+
+.doc-text-body {
+}
+
+.doc-authors {
+    @apply text-neutral-400 font-light text-[0.6rem] leading-none py-[0.1rem];
+}
+.doc-availability {
+    @apply font-normal text-[0.5rem] sm:text-[0.6rem] lg:text-[0.7rem] leading-none py-[0.1rem];
+}
+
+.doc-lables {
+    @apply flex flex-row flex-wrap gap-1;
+    @apply text-[0.6rem] lg:text-[0.8rem];
+}
+
+.doc-src-icon {
+    @apply h-[1em] inline align-[-10%];
+}
+
+.doc-tag {
+    @apply border-[0.15em] border-teal-400 dark:border-teal-700;
+    @apply text-[0.5rem] lg:text-[0.6rem] align-middle;
+    @apply font-semibold px-1 my-auto m-[0.15em] rounded-full select-none;
+    @apply transition-[background-position] duration-500 bg-gradient-to-r from-teal-500 to-teal-700 bg-size-400 bg-pos-0 hover:bg-pos-50;
+    @apply cursor-pointer;
+    @apply active:duration-75 active:bg-pos-100;
+}
