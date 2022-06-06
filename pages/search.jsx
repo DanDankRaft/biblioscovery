@@ -2,7 +2,7 @@ import Header from 'next/head';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import Document, {testInfo} from '../components/document-card';
-
+import Link from 'next/link';
 
 function ResultItems(props) {
     const jsonGetFetcher = (url) => fetch(url).then(res => res.json());
@@ -13,19 +13,13 @@ function ResultItems(props) {
     else
       searchResults = (
           <div>
-            {data.map((val, i) =>{
-              return (<div key={val["title"]}>{val["title"]}</div>);
-            })}
+            {data.map(val => <Document key={val["id"]} doc={val} />)}
           </div>
       );
 
     return (
     <>
       {searchResults}
-      <div>
-        {Document(testInfo[0])}
-        {Document(testInfo[1])}
-      </div>
     </>);
   }
 
@@ -34,7 +28,7 @@ export default function search(props) {
     return (
         <>
             <Header>
-                <title>{query.q} | Biblioscovery</title>
+                <title>{query.q} | Bibliscovery</title>
             </Header>
             <div>
                 <ResultItems content={query.q} />
