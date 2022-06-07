@@ -42,7 +42,7 @@ function ResultItems(props) {
     </div>);
   }
 
-export default function search(props) {
+export default function Search(props) {
     const router = useRouter();
     return (
         <>
