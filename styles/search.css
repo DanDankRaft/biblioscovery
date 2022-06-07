@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.searchbox {
+    @apply flex flex-row flex-wrap justify-center items-center;
+  }
+  
+input:-webkit-autofill, input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  
+.searchicon {
+    @apply block lg:hidden;
+  }
+  
+.searchtext {
+    @apply hidden lg:inline;
+  }
+  
+.searchbox button {
+    @apply select-none;
+    @apply rounded-full bg-gradient-to-br text-white px-3 shadow-md py-[4px] min-h-[37px] font-semibold shadow-blue-600 dark:shadow-blue-900;
+    @apply transition-[background-position] duration-500 bg-gradient-to-tl from-blue-800 via-blue-700 to-blue-600 bg-size-200 bg-pos-0 hover:bg-pos-100;
+    @apply active:shadow-inner active:shadow-black active:duration-75;
+  }
+  
+.searchbox input {
+    @apply m-1 rounded-full border-4 border-neutral-600 px-4 font-semibold;
+    @apply bg-none dark:bg-neutral-800 dark:border-neutral-500 dark:placeholder:text-neutral-400 placeholder:text-neutral-600;
+    @apply max-w-[80vw] w-[80vw] xl:w-[1000px];
+  }
+
+.search-navbar {
+    @apply w-full md:min-w-[980px] dark:bg-neutral-800 bg-white;
+    @apply flex flex-col md:flex-row;
+    @apply static md:fixed top-0 z-50;
+    @apply border-none border-b-4 md:border-solid dark:border-neutral-500 border-neutral-600;
+}
+
+.search-navbar-title {
+    @apply text-xl leading-8 lg:text-2xl text-center;
+    @apply pl-1;
+    @apply mb-0;
+}
+
+.search-navbar .searchbox {
+    @apply text-sm;
+}
+
+.search-navbar .searchbox input {
+  @apply max-w-[80vw] md:max-w-[50vw] lg:max-w-[40vw];
+}
+
+.results {
+  @apply static md:relative md:top-[2.5rem];
+  @apply mx-auto w-fit;
+}

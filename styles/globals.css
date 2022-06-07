@@ -21,6 +21,10 @@ body {
   @apply transition-[background-position] duration-500 bg-size-200 bg-pos-0 hover:bg-pos-100;
 }
 
+.title:hover .magicO {
+  @apply bg-pos-100; 
+}
+
 .title {
   @apply font-black select-none;
   @apply text-[12vw] md:text-[10vw] lg:text-[110px];
@@ -31,33 +35,4 @@ body {
   @apply text-center;
   @apply text-[4.5vw] md:text-[4vw] lg:text-[40px];
   @apply mb-3 font-semibold;
-}
-
-.searchbox {
-  @apply flex flex-row flex-wrap justify-center items-center;
-}
-
-input:-webkit-autofill, input:-webkit-autofill:focus {
-  transition: background-color 600000s 0s, color 600000s 0s;
-}
-
-.searchicon {
-  @apply block md:hidden;
-}
-
-.searchtext {
-  @apply hidden md:inline;
-}
-
-.searchbox button {
-  @apply select-none;
-  @apply rounded-full bg-gradient-to-br text-white px-3 shadow-md py-[4px] min-h-[37px] font-semibold shadow-blue-600 dark:shadow-blue-900;
-  @apply transition-[background-position] duration-500 bg-gradient-to-tl from-blue-800 via-blue-700 to-blue-600 bg-size-200 bg-pos-0 hover:bg-pos-100;
-  @apply active:shadow-inner active:shadow-black active:duration-75;
-}
-
-.searchbox input {
-  @apply m-1 rounded-full border-4 border-black px-4 font-semibold;
-  @apply bg-white dark:bg-neutral-800 dark:border-neutral-500 dark:placeholder:text-neutral-400 placeholder:text-neutral-500;
-  @apply max-w-[80vw] w-[80vw] xl:w-[1000px];
 }

@@ -6,7 +6,7 @@
     @apply mt-1 md:mt-2;
     @apply w-[95vw] max-w-[1000px] h-fit;
     @apply border-4 rounded-lg p-1;
-    @apply mx-auto;
+    /* @apply mx-auto; */
 }
 
 .url-bar {

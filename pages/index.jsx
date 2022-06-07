@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import React, {useState} from 'react';
 import { useRouter } from 'next/router';
-import Title from '../components/title'
+import Title from '../components/title';
+import SearchBox from '../components/search-box';
 
-export default function newHome(props) {
+export default function Index(props) {
 
   let [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
@@ -25,29 +24,4 @@ export default function newHome(props) {
       </div>
     </>
   );
-}
-
-class SearchBox extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.onSubmitSearch = this.onSubmitSearch.bind(this);
-  }
-
-  onSubmitSearch(e)
-  {
-    e.preventDefault();
-    let query = e.target.query.value;
-    if(query != "")
-      this.props.router.push(`/search?q=${e.target.query.value}`);
-  }
-
-  render()
-  {
-    return (
-    <form className='searchbox' action="." onSubmit={this.onSubmitSearch}>
-      <input type='search' name="query" placeholder='Start your journey...'></input>
-      <button type='submit'><FontAwesomeIcon className='searchicon' icon={faMagnifyingGlass}/><span className='searchtext'>Search</span></button>
-    </form>);
-  }
 }
